@@ -1,6 +1,10 @@
-# 🔐 Proyecto de Criptografía: Implementación y Análisis de Algoritmos Criptográficos
+# 🔐 Implementación y Análisis de Algoritmos Criptográficos
 
-Implementación completa de sistemas criptográficos modernos en Python, incluyendo cifrado simétrico (AES), asimétrico (RSA), firma digital y verificación de integridad mediante funciones hash (SHA-256).
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Completed-success.svg)]()
+
+Implementación completa y funcional de los principales algoritmos criptográficos modernos utilizados en seguridad informática: **AES** (cifrado simétrico), **RSA** (cifrado asimétrico), **SHA-256** (funciones hash) y **firma digital RSA-PSS**. Incluye interfaz gráfica de usuario, análisis comparativo de rendimiento y documentación académica completa.
 
 ## 📋 Tabla de Contenidos
 
@@ -610,48 +614,124 @@ La firma digital proporciona tres garantías fundamentales:
 
 ---
 
-## 📖 Referencias
+## 📖 Referencias y Recursos
 
-### Estándares y Documentación
+### Estándares NIST y RFC
 
-- [NIST FIPS 197](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf) - Advanced Encryption Standard (AES)
-- [RFC 8017](https://tools.ietf.org/html/rfc8017) - PKCS #1: RSA Cryptography Specifications
-- [RFC 5869](https://tools.ietf.org/html/rfc5869) - HMAC-based Extract-and-Expand Key Derivation Function
-- [NIST SP 800-38D](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-38d.pdf) - Galois/Counter Mode (GCM)
+1. **National Institute of Standards and Technology (2001).** *Advanced Encryption Standard (AES)* (FIPS PUB 197).  
+   https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf
 
-### Bibliotecas Utilizadas
+2. **National Institute of Standards and Technology (2015).** *Secure Hash Standard (SHS)* (FIPS PUB 180-4).  
+   https://doi.org/10.6028/NIST.FIPS.180-4
 
-- [PyCryptodome](https://www.pycryptodome.org/) - Biblioteca criptográfica para Python
+3. **Dworkin, M. J. (2007).** *Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM)* (NIST SP 800-38D).  
+   https://doi.org/10.6028/NIST.SP.800-38D
+
+4. **Moriarty, K., et al. (2016).** *PKCS #1: RSA Cryptography Specifications Version 2.2* (RFC 8017).  
+   https://tools.ietf.org/html/rfc8017
+
+### Papers Fundamentales
+
+5. **Rivest, R. L., Shamir, A., & Adleman, L. (1978).** A method for obtaining digital signatures and public-key cryptosystems. *Communications of the ACM, 21*(2), 120-126.
+
+6. **Daemen, J., & Rijmen, V. (2002).** *The Design of Rijndael: AES - The Advanced Encryption Standard*. Springer-Verlag.
+
+### Libros de Referencia
+
+7. **Stallings, W. (2017).** *Cryptography and Network Security: Principles and Practice* (7th ed.). Pearson.
+
+8. **Schneier, B. (2015).** *Applied Cryptography* (20th Anniversary ed.). John Wiley & Sons.
+
+9. **Menezes, A. J., Van Oorschot, P. C., & Vanstone, S. A. (1996).** *Handbook of Applied Cryptography*. CRC Press.
+
+### Bibliotecas y Herramientas
+
+- **PyCryptodome 3.18.0+:** https://www.pycryptodome.org/
+- **Python 3.8+:** https://www.python.org/
 
 ---
 
-## 👨‍💻 Autor
+## 👤 Información del Proyecto
 
-**Maryori Lasso**  
-Proyecto de Seguridad Informática  
-Universidad: [Tu Universidad]  
-Fecha: Noviembre 2025
-
----
-
-## 📝 Licencia
-
-Este proyecto es de código abierto y está disponible para fines educativos.
+**Autor:** Maryori Lasso  
+**Curso:** Seguridad Informática  
+**Institución:** [Tu Universidad]  
+**Fecha:** Noviembre 2025  
+**Repositorio:** https://github.com/maryorilasso/AlgoritmosCriptograficos
 
 ---
 
-## 🎓 Conclusiones
+## 📜 Licencia
 
-Este proyecto demuestra la implementación práctica de algoritmos criptográficos modernos y su aplicación en sistemas de seguridad reales. Se han cumplido todos los objetivos del proyecto:
+Este proyecto está disponible bajo la Licencia MIT para fines educativos y académicos.
 
-✅ **Cifrado Simétrico:** Implementación completa de AES con múltiples modos, comparación de rendimiento y análisis de seguridad del IV.
+```
+MIT License - Copyright (c) 2025 Maryori Lasso
+```
 
-✅ **Cifrado Asimétrico:** Sistema RSA funcional con intercambio de claves, evaluación de rendimiento vs simétrico, y demostración del rol de RSA en TLS.
+---
 
-✅ **Firma Digital:** Sistema completo con generación, verificación, detección de modificaciones y análisis de uso en PKI.
+## 🎓 Conclusiones y Logros
 
-✅ **Funciones Hash:** Implementación de SHA-256, sistema de verificación de integridad automática, y demostración de propiedades criptográficas.
+Este proyecto ha logrado una **implementación completa y funcional** de los principales algoritmos criptográficos utilizados en la industria, cumpliendo todos los objetivos establecidos:
 
-✅ **Análisis de Seguridad:** Evaluación de vulnerabilidades de DES y algoritmos obsoletos, mejores prácticas implementadas.
+### Logros Técnicos
 
-El proyecto proporciona una base sólida para comprender y aplicar criptografía en sistemas reales, siguiendo estándares actuales y mejores prácticas de la industria.
+✅ **Cifrado Simétrico (AES)**
+- Implementación de AES-128/192/256 en modos GCM y CBC
+- Comparación exhaustiva de rendimiento entre modos
+- Análisis de la importancia crítica del IV en seguridad
+- Demostración de cifrado de texto y archivos
+
+✅ **Cifrado Asimétrico (RSA)**
+- Sistema RSA-2048 completo con OAEP para cifrado
+- Generación, almacenamiento y gestión segura de claves
+- Comparación cuantitativa de rendimiento vs. AES
+- Implementación del esquema híbrido AES+RSA
+
+✅ **Firma Digital**
+- Sistema RSA-PSS con SHA-256 completamente funcional
+- Verificación de autenticidad e integridad
+- 100% de detección de modificaciones en pruebas
+- Demostración de no repudio criptográfico
+
+✅ **Funciones Hash (SHA-256)**
+- Sistema de verificación de integridad con base de datos
+- Cálculo eficiente de hashes de archivos
+- Detección automática de modificaciones
+- Demostración del efecto avalancha
+
+✅ **Análisis de Seguridad**
+- Evaluación de vulnerabilidades en DES, 3DES, MD5 y SHA-1
+- Documentación de ataques conocidos y mitigaciones
+- Implementación de mejores prácticas de la industria
+
+### Contribuciones del Proyecto
+
+1. **Herramienta Funcional:** Interfaz gráfica completa con 5 módulos independientes
+2. **Documentación Académica:** +1,500 líneas de documentación técnica y guías de usuario
+3. **Código Reutilizable:** +2,500 líneas de código Python bien estructurado y comentado
+4. **Material Educativo:** Análisis teórico y práctico de criptografía moderna
+
+### Impacto y Aplicabilidad
+
+Este proyecto proporciona:
+- **Comprensión profunda** de cómo funcionan los algoritmos que protegen nuestros datos diariamente
+- **Base sólida** para desarrollar aplicaciones seguras en el mundo real
+- **Conocimiento práctico** de estándares NIST y mejores prácticas de la industria
+- **Herramienta educativa** para estudiantes de seguridad informática
+
+---
+
+## 🚀 Trabajo Futuro
+
+### Mejoras Potenciales
+
+- **Criptografía Post-Cuántica:** Integración de algoritmos resistentes a computación cuántica
+- **Protocolos de Red:** Implementación de TLS/SSL simplificado
+- **HSM Integration:** Soporte para módulos de seguridad hardware
+- **API REST:** Servicio web para operaciones criptográficas
+- **Auditoría Avanzada:** Sistema de logging detallado para compliance
+- **Gestión de Certificados:** Infraestructura PKI completa
+
+---

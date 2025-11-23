@@ -129,8 +129,12 @@ class CryptoApp:
         ttk.Radiobutton(key_size_frame, text="AES-256", variable=self.aes_key_size, 
                        value=256).pack(side='left', padx=5)
         
-        ttk.Button(scrollable_frame, text="Generar Clave", 
-                  command=self.generate_aes_key).grid(row=3, column=0, columnspan=3, pady=10)
+        key_gen_frame = ttk.Frame(scrollable_frame)
+        key_gen_frame.grid(row=3, column=0, columnspan=3, pady=10)
+        ttk.Button(key_gen_frame, text="Generar Clave", 
+                  command=self.generate_aes_key).pack(side='left', padx=5)
+        ttk.Button(key_gen_frame, text=" Copiar Clave", 
+                  command=self.copy_aes_key).pack(side='left', padx=5)
         
         self.aes_key_label = ttk.Label(scrollable_frame, text="No hay clave generada", 
                                        foreground='#e74c3c')
@@ -447,13 +451,34 @@ class CryptoApp:
         try:
             size = self.aes_key_size.get()
             self.aes_key = generate_aes_key(size)
-            self.aes_key_label.config(text=f"✓ Clave AES-{size} generada: {self.aes_key.hex()[:32]}...", 
+            key_hex = self.aes_key.hex()
+            self.aes_key_label.config(text=f"✓ Clave AES-{size} generada: {key_hex[:32]}...", 
                                      foreground='#2ecc71')
-            self.log_message(self.aes_log, f"✓ Clave AES-{size} generada exitosamente")
-            self.log_message(self.aes_log, f"  Clave: {self.aes_key.hex()}")
+            self.log_message(self.aes_log, f"\n✓ Clave AES-{size} generada exitosamente")
+            self.log_message(self.aes_log, f"  Clave COMPLETA: {key_hex}")
+            self.log_message(self.aes_log, f"  Longitud: {len(self.aes_key)} bytes = {len(self.aes_key)*8} bits")
+            self.log_message(self.aes_log, f"  💡 Usa el botón 'Copiar Clave' para copiar al portapapeles")
             self.update_status(f"Clave AES-{size} generada")
         except Exception as e:
             messagebox.showerror("Error", f"Error al generar clave: {e}")
+    
+    def copy_aes_key(self):
+        """Copiar clave AES al portapapeles"""
+        if not self.aes_key:
+            messagebox.showwarning("Advertencia", "Primero genera una clave AES")
+            return
+        
+        try:
+            key_hex = self.aes_key.hex()
+            self.root.clipboard_clear()
+            self.root.clipboard_append(key_hex)
+            self.root.update()
+            self.log_message(self.aes_log, f"\n✓ Clave copiada al portapapeles")
+            self.log_message(self.aes_log, f"  {key_hex}")
+            messagebox.showinfo("Éxito", f"Clave copiada al portapapeles:\n\n{key_hex}")
+            self.update_status("Clave copiada al portapapeles")
+        except Exception as e:
+            messagebox.showerror("Error", f"Error al copiar: {e}")
             
     def encrypt_aes(self):
         """Cifrar archivo con AES"""
