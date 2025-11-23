@@ -1,0 +1,44 @@
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Archivos generados por las pruebas
+*.pem
+*.enc
+*.bin
+*_db.json
+priv.pem
+pub.pem
+*.key
+
+# Archivos temporales del proyecto
+crypto_project/tests/*.pem
+crypto_project/tests/*.enc
+crypto_project/tests/*.bin
+crypto_project/tests/*_db.json
+crypto_project/tests/documento_*.txt
+crypto_project/tests/mensaje_*.txt
+crypto_project/*.pem
+crypto_project/*.enc
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

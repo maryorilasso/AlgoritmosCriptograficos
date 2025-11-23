@@ -1,0 +1,5 @@
+Este es un archivo de ejemplo para pruebas de integridad.
+
+Contenido de muestra que será verificado con SHA-256.
+
+Puede contener cualquier tipo de información sensible.
